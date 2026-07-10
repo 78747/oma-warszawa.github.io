@@ -176,9 +176,9 @@ body.is-loaded .preloader {
   justify-self: center;
   display: flex;
   align-items: center;
-  gap: 4px;
-  padding: 5px;
-  border: 1px solid rgba(255, 255, 255, 0.22);
+  gap: 6px;
+  padding: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.28);
   background: rgba(20, 17, 15, 0.18);
   border-radius: var(--radius);
   backdrop-filter: blur(18px);
@@ -193,11 +193,12 @@ body.is-loaded .preloader {
 .main-nav a {
   position: relative;
   display: inline-flex;
-  min-height: 38px;
+  min-height: 42px;
   align-items: center;
-  padding: 0 14px;
+  padding: 0 16px;
   border-radius: 6px;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
+  font-weight: 760;
   color: currentColor;
   opacity: 0.84;
   transition:
@@ -1748,8 +1749,8 @@ body.is-navigating {
     display: flex;
     justify-self: stretch;
     width: 100%;
-    gap: 4px;
-    padding: 5px;
+    gap: 6px;
+    padding: 6px;
     overflow-x: auto;
     color: var(--ink);
     background: rgba(255, 255, 255, 0.72);
@@ -1766,7 +1767,7 @@ body.is-navigating {
 
   .main-nav a {
     flex: 0 0 auto;
-    min-height: 38px;
+    min-height: 42px;
     justify-content: center;
     color: var(--ink);
     background: rgba(255, 255, 255, 0.62);
@@ -1802,8 +1803,8 @@ body.is-navigating {
   }
 
   .main-nav a {
-    padding-inline: 12px;
-    font-size: 0.86rem;
+    padding-inline: 14px;
+    font-size: 0.92rem;
   }
 }
 body.menu-page .menu-section {
