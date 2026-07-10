@@ -197,3 +197,64 @@ shareButton?.addEventListener("click", async () => {
     shareStatus.textContent = "Nie udało się udostępnić linku w tej przeglądarce.";
   }
 });
+const omaWeek = {
+  0: {
+    day: "Niedziela",
+    hours: "09:00-20:00",
+    dish: "Buraczkowa, naleśniczki jarskie albo kultowe mielone",
+    details: "Niedzielny obiad jest bardziej domowy: zupa buraczkowa, opcja jarska i mięsna z buraczkami."
+  },
+  1: {
+    day: "Poniedziałek",
+    hours: "12:00-21:00",
+    dish: "Sezonowy obiad OMY",
+    details: "Poniedziałkową kartę warto potwierdzić telefonicznie, bo menu obiadowe zmienia się sezonowo."
+  },
+  2: {
+    day: "Wtorek",
+    hours: "12:00-21:00",
+    dish: "Pieczarkowa, naleśniczki ze szpinakiem albo sznycelek",
+    details: "Wtorkowy obiad łączy zupę, danie jarskie i danie mięsne z kurczakiem zagrodowym."
+  },
+  3: {
+    day: "Środa",
+    hours: "12:00-21:00",
+    dish: "Pomidorówka, pierożki albo kultowe mielone",
+    details: "Środa to mocno domowy zestaw: pomidorówka, pierożki z twarogiem albo mielone z puree."
+  },
+  4: {
+    day: "Czwartek",
+    hours: "12:00-21:00",
+    dish: "Pieczarkowa, wytrawne leniwe albo kurczak z pieca",
+    details: "Czwartek stawia na sosy, zioła i dopracowany obiad w stylu eleganckiej kuchni domowej."
+  },
+  5: {
+    day: "Piątek",
+    hours: "12:00-21:00",
+    dish: "Pomidorowa, młode ziemniaczki albo klops w sosie chrzanowym",
+    details: "Piątkowy obiad jest lekki, sezonowy i konkretny: zupa, opcja jarska oraz mięsna."
+  },
+  6: {
+    day: "Sobota",
+    hours: "09:00-21:00",
+    dish: "Kurkowa, kalafior z pieca albo sznycelek z kurczaka",
+    details: "Sobota zaczyna się wcześniej, więc strona prowadzi prosto do menu, telefonu i trasy."
+  }
+};
+
+const todayCard = document.querySelector("[data-today-card]");
+if (todayCard) {
+  const now = new Date();
+  const today = omaWeek[now.getDay()] || omaWeek[5];
+  const setText = (selector, value) => {
+    const el = todayCard.querySelector(selector);
+    if (el) el.textContent = value;
+  };
+
+  setText("[data-today-day]", today.day);
+  setText("[data-today-title]", `${today.day} w OMA: telefon, menu i dojazd w jednym miejscu.`);
+  setText("[data-today-copy]", "Najważniejsze akcje są od razu pod ręką: można zadzwonić, sprawdzić dzisiejszą kartę albo uruchomić trasę do Radnej 13.");
+  setText("[data-today-dish]", today.dish);
+  setText("[data-today-details]", today.details);
+  setText("[data-today-hours]", today.hours);
+}
